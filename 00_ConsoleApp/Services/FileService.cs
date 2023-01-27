@@ -7,25 +7,25 @@ using System.Text;
 
 namespace _00_ConsoleApp.Services
 {
-    internal class FileService
+    public class FileService
     {
-        public string FilePathdesktop = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\content.json";
+        //private string FilePathdesktop = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\content.json";
         public string FilePath = $@"{Directory.GetCurrentDirectory()}\adresslist.json";
-        private List<ContactInfo> PersonList = new();
+        public List<ContactInfo> PersonList = new();
         public void SaveToList(ContactInfo content)
         {
 
             PersonList.Add(content);
-            SaveList(PersonList);
+            SaveListToJson(PersonList);
         }
 
-        public void SaveList(List<ContactInfo> personList) 
+        public void SaveListToJson(List<ContactInfo> personList) 
         {
             using var sw = new StreamWriter(FilePath);
             sw.Write(JsonConvert.SerializeObject(personList));
             Console.WriteLine("Adressboken har uppdaterats. Vänligen tryck på någon knapp för att gå tillbaka till huvudmenyn.");
         }
-        public void ReadList()
+        public bool ReadList()
         {
             try
             {
@@ -35,10 +35,11 @@ namespace _00_ConsoleApp.Services
                 if (List != null)
                 {
                     PersonList = List;
+                    return true;
                 }
-                else { };
             }
-            catch { }
+            catch{}
+            return false;
         }
         public void ReadAndDisplay()
         {
@@ -103,7 +104,7 @@ namespace _00_ConsoleApp.Services
                         try
                         {
                             PersonList.Remove(persons[result]);
-                            SaveList(PersonList);
+                            SaveListToJson(PersonList);
                             foreach (ContactInfo x in PersonList)
                             {
                                 DisplayContactInfo.WriteInfo(x);
@@ -142,7 +143,7 @@ namespace _00_ConsoleApp.Services
                     try
                     {
                         PersonList.Remove(persons[0]);
-                        SaveList(PersonList);
+                        SaveListToJson(PersonList);
                         foreach (ContactInfo x in PersonList)
                         {
                             DisplayContactInfo.WriteInfo(x);

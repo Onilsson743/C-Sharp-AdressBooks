@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _00_ConsoleApp.Models
 {
-    internal class ContactInfo : IContactInfoPerson
+    public class ContactInfo : IContactInfoPerson
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string FirstName { get; set; } = null!;
