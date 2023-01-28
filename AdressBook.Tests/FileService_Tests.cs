@@ -44,6 +44,7 @@ namespace AdressBook.Tests
             fileService.ReadList();
 
             // Assert
+            //Assert.Contains();
             Assert.Equal(contactList, fileService.PersonList);
             //Assert.True(fileService.PersonList.Contains(contactInfo));
         }
