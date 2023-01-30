@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WPF_MVVM_AdressBook.MVVM.ViewModels;
+using WPF_MVVM_AdressBook.Services;
 
 namespace WPF_MVVM_AdressBook
 {
@@ -10,6 +11,7 @@ namespace WPF_MVVM_AdressBook
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            ContactServices.ReadList();
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel()

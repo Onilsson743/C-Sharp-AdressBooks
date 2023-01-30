@@ -16,5 +16,9 @@ namespace WPF_MVVM_AdressBook.MVVM.Models
         public string PhoneNumber { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
         public string DisplayName => $"{FirstName} {LastName}";
+        public string DisplayAll => $"Name: {DisplayName}\n" +
+            $"Email: {Email}\n" +
+            $"Phone Number: {PhoneNumber}\n" +
+            $"Adress: {Address}\n";
     }
 }

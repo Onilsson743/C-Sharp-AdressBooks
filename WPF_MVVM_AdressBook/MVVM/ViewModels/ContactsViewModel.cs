@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPF_MVVM_AdressBook.MVVM.Models;
+using WPF_MVVM_AdressBook.Services;
 
 namespace WPF_MVVM_AdressBook.MVVM.ViewModels
 {
     public partial class ContactsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string title = "Contacts";
+        private string title = "Alla kontakter";
 
         [ObservableProperty]
-        private ObservableCollection<ContactModel> contactList = new ObservableCollection<ContactModel>()
-        {
-            new ContactModel() {FirstName="Oscar", LastName="Nilsson", Email = "O.nilsson743@gmail.com"},
-            new ContactModel() {FirstName="Clara", LastName="Ekman", Email = "Clara.ekman37@gmail.com"},
-        };
+        private ObservableCollection<ContactModel> contactList = ContactServices.GetList();
+
+        [ObservableProperty]
+        private ContactModel selectedContact = null!;
+        
     }
 }
