@@ -17,7 +17,6 @@ namespace WPF_MVVM_AdressBook.MVVM.Views
             InitializeComponent();
         }
 
-
         private void button_Add_Click(object sender, RoutedEventArgs e)
         {
             ContactServices.Add(new ContactModel
@@ -26,9 +25,9 @@ namespace WPF_MVVM_AdressBook.MVVM.Views
                 LastName = tb_LastName.Text,
                 Email = tb_Email.Text,
                 PhoneNumber = tb_PhoneNumber.Text,
-                Address = tb_Adres.Text,
+                Address = tb_Address.Text,
             });
-            //ClearForm();
+            ClearForm();
         }
 
         private void ClearForm()
@@ -36,6 +35,8 @@ namespace WPF_MVVM_AdressBook.MVVM.Views
             tb_FirstName.Text = string.Empty;
             tb_LastName.Text = string.Empty;
             tb_Email.Text = string.Empty;
+            tb_PhoneNumber.Text = string.Empty;
+            tb_Address.Text = string.Empty;
         }
     }
 }

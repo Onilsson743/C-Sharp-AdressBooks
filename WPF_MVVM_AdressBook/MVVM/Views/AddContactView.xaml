@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_MVVM_AdressBook.MVVM.Views"
              xmlns:models="clr-namespace:WPF_MVVM_AdressBook.MVVM.Models"
-             xmlns:viewmodels="clr-namespace:WPF_MVVM_AdressBook.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ContactsViewModel}"
+             xmlns:viewmodels="clr-namespace:WPF_MVVM_AdressBook.MVVM.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:ContactsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              >
@@ -48,12 +49,12 @@
                 <TextBox Name="tb_PhoneNumber" Padding="3" Margin="0 0 10 10" />
 
                 <TextBlock Text="Adress" />
-                <TextBox Name="tb_Adres" Padding="3" Margin="0 0 10 10" />
+                <TextBox Name="tb_Address" Padding="3" Margin="0 0 10 10" />
 
                 <Button Content="Lägg Till" Click="button_Add_Click" Padding="5" Margin="0 15 10 10"/>
             </StackPanel>
 
-            <!-- List of AllContacts-->
+            <!-- List of all contacts-->
             <ListView Grid.Column="2"  ItemsSource="{Binding ContactList}" Background="Transparent" Foreground="white">
                 <ListView.ItemTemplate >
                     <DataTemplate DataType="{x:Type models:ContactModel}">

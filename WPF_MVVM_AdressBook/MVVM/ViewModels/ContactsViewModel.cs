@@ -14,13 +14,13 @@ namespace WPF_MVVM_AdressBook.MVVM.ViewModels
     public partial class ContactsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string title = "Alla kontakter";
+        private string title = "Testar";
 
         [ObservableProperty]
         private ObservableCollection<ContactModel> contactList = ContactServices.GetList();
 
         [ObservableProperty]
-        private ContactModel selectedContact = null!;
+        public ContactModel selectedContact = null!;
         
     }
 }

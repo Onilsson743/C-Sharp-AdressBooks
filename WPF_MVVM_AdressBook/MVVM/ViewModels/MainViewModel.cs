@@ -6,12 +6,15 @@ namespace WPF_MVVM_AdressBook.MVVM.ViewModels
     partial class MainViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableObject currentViewModel = new ContactsViewModel();
+        public static ObservableObject currentViewModel = new ContactsViewModel();
 
         [RelayCommand]
         private void GoToAddContactViewModel() => CurrentViewModel = new AddContactViewModel();
 
         [RelayCommand]
         private void GoToContactsViewModel() => CurrentViewModel = new ContactsViewModel();
+
+        [RelayCommand]
+        private void GoToEditContactViewModel() => CurrentViewModel = new EditContactViewModel();
     }
 }

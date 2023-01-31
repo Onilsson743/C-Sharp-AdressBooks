@@ -1,17 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
-using System.Collections.ObjectModel;
 using WPF_MVVM_AdressBook.MVVM.Models;
 using WPF_MVVM_AdressBook.Services;
 
 namespace WPF_MVVM_AdressBook.MVVM.ViewModels
 {
-    public partial class AddContactViewModel : ObservableObject
+    public partial class EditContactViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string title = "Lägg till en ny kontakt";
+        private string title = "Ändra följande kontakt";
 
         [ObservableProperty]
-        private ObservableCollection<ContactModel> contactList = ContactServices.GetList();
+        private ContactModel selectedContact = null!;
+
     }
 }
