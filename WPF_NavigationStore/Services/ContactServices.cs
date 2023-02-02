@@ -6,22 +6,23 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPF_MVVM_AdressBook.MVVM.Models;
+using System.Windows;
+using WPF_NavigationStore.MVVM.Models;
 
-namespace WPF_MVVM_AdressBook.Services
+namespace WPF_NavigationStore.Services
 {
-    public static class ContactServices
+    public class ContactServices
     {
-        private static string filePath = $@"{Directory.GetCurrentDirectory()}\adresslist.json";
-        private static ObservableCollection<ContactModel> contacts = new ObservableCollection<ContactModel>();
+        private string filePath = $@"{Directory.GetCurrentDirectory()}\adresslist.json";
+        public ObservableCollection<ContactModel> contacts = new ObservableCollection<ContactModel>();
 
-        public static void SaveListToJson(ObservableCollection<ContactModel> personList)
+        public void SaveListToJson(ObservableCollection<ContactModel> personList)
         {
             using var sw = new StreamWriter(filePath);
             sw.Write(JsonConvert.SerializeObject(personList));
         }
 
-        public static void ReadList()
+        public void ReadList()
         {
             try
             {
@@ -37,19 +38,24 @@ namespace WPF_MVVM_AdressBook.Services
             catch { contacts = new ObservableCollection<ContactModel>(); }
         }
 
-        public static void Add(ContactModel content)
-        { 
-            contacts.Add(content);
-            SaveListToJson(contacts);
+        public void Add(ContactModel content)
+        {
+            if (content.FirstName != null!)
+            {
+                MessageBox.Show(content.DisplayAll, "Test");
+            }
+            
+            //contacts.Add(content);      
+            //SaveListToJson(contacts);
 
         }
-        public static void Remove(ContactModel content)
+        public void Remove(ContactModel content)
         {
             contacts.Remove(content);
             SaveListToJson(contacts);
         }
 
-        public static ObservableCollection<ContactModel> GetList()
+        public ObservableCollection<ContactModel> GetList()
         {
             return contacts;
         }

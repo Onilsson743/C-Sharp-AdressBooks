@@ -20,9 +20,6 @@ namespace WPF_MVVM_AdressBook.MVVM.Views
         {
             var button = (Button)sender;
             var contact = (ContactModel)button.DataContext;
-            MessageBox.Show(contact.DisplayAll, "Test");
-            MainViewModel.currentViewModel = new EditContactViewModel();
-            MVVM.ViewModels.MainViewModel.currentViewModel = new EditContactViewModel();
         }
         private void button_Remove_Click(object sender, RoutedEventArgs e)
         {

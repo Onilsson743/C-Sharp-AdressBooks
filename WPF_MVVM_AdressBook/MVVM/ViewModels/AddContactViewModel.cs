@@ -13,5 +13,6 @@ namespace WPF_MVVM_AdressBook.MVVM.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<ContactModel> contactList = ContactServices.GetList();
+        
     }
 }

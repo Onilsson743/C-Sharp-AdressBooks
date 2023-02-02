@@ -1,11 +1,11 @@
-﻿
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPF_MVVM_AdressBook.MVVM.Models
+namespace WPF_NavigationStore.MVVM.Models
 {
     public class ContactModel
     {
@@ -20,5 +20,6 @@ namespace WPF_MVVM_AdressBook.MVVM.Models
             $"Email: {Email}\n" +
             $"Telefonnummer: {PhoneNumber}\n" +
             $"Adress: {Address}\n";
+
     }
 }
