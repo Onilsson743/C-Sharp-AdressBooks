@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using WPF_NavigationStore.Helpers;
 using WPF_NavigationStore.MVVM.Models;
@@ -13,14 +15,13 @@ namespace WPF_NavigationStore.MVVM.ViewModels
         public ObservableCollection<ContactModel> ContactList { get; }
         public ObservableCollection<ContactModel> contact { get; }
         public ICommand GoToAddViewModelCommand { get; }
-        public ICommand EditCommand { get; }
-        public ICommand SetContactCommand { get; }
-       
+        public ICommand GoToEditCommand { get; }
+
         public ContactsViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
             GoToAddViewModelCommand = new NavigateCommand<AddContactViewModel>(navigationStore, () => new AddContactViewModel(_navigationStore));
-            EditCommand = new NavigateCommand<EditContactViewModel>(navigationStore, () => new EditContactViewModel(_navigationStore)); 
+            GoToEditCommand = new NavigateCommand<EditContactViewModel>(navigationStore, () => new EditContactViewModel(_navigationStore));
             ContactList = ContactServices.GetList();
             contact = ContactServices.contact;
         }

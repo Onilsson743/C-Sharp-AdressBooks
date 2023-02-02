@@ -30,12 +30,13 @@
                       Background="Transparent" 
                       ItemsSource="{Binding ContactList}" 
                       SelectionMode="Single" 
-                      SelectedItem="{Binding SelectedContact}"
-                      HorizontalContentAlignment="Stretch">
+                      SelectedItem="{Binding name}"
+                      HorizontalContentAlignment="Stretch"
+                      >
                 <ListView.ItemTemplate >
                     <DataTemplate DataType="{x:Type models:ContactModel}">
-                        <Border CornerRadius="5" Background="#100E27">
-                            <Grid>
+                        <Border MouseUp="ListView_MouseUp" CornerRadius="5" Background="#100E27">
+                            <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
@@ -49,7 +50,7 @@
 
 
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="right">
-                                    <Button Command="{Binding }" Content="Ändra"  Width="45" Height="35" Background="DarkSeaGreen">
+                                    <Button x:Name="button_Show" Click="button_Edit_Click"  Width="45" Height="35" Background="DarkSeaGreen">
                                         <Button.Resources>
                                             <Style TargetType="{x:Type Border}">
                                                 <Setter Property="CornerRadius" Value="5"/>
@@ -79,21 +80,11 @@
                       >
                 <ListView.ItemTemplate >
                     <DataTemplate DataType="{x:Type models:ContactModel}">
-                        <Border CornerRadius="5" Background="#100E27">
-                            <Grid>                                
-                                <TextBlock Text="{Binding DisplayAll}" Padding="5 5 0 0" />
-                                <TextBlock Text="Test" Padding="5 0 0 5" />
-                            </Grid>
-                        </Border>
+                        <TextBlock Text="{Binding DisplayAll}" Padding="5 5 0 0" FontSize="18" FontWeight="Medium"/>                           
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<Border Grid.Column="1" CornerRadius="5" Background="#100E27" Margin="10 0 0 0" >
-                <StackPanel >
-                    <TextBlock Text="{Binding contact.DisplayAll}" Margin="15 10 0 0" FontSize="16" Foreground="White"/>
-                    <TextBlock Text="Test" Margin="15 10 0 0" FontSize="16" Foreground="White"/>
-                </StackPanel>
-            </Border>-->
+            
         </Grid>
     </Grid>
 </UserControl>

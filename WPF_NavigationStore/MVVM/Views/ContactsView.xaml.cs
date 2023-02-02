@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,11 +30,7 @@ namespace WPF_NavigationStore.MVVM.Views
 
         private void button_Edit_Click(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
-            var contact = (ContactModel)button.DataContext;
 
-
-            ContactServices.contact.Add(contact);
         }
         private void button_Remove_Click(object sender, RoutedEventArgs e)
         {
@@ -50,6 +47,12 @@ namespace WPF_NavigationStore.MVVM.Views
 
         }
 
-        
+        private void ListView_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var button = (Border)sender;
+            var contact = (ContactModel)button.DataContext;
+            ContactServices.contact.Clear();
+            ContactServices.contact.Add(contact);
+        }
     }
 }
