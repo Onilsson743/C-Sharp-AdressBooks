@@ -25,20 +25,20 @@ namespace WPF_NavigationStore
             {
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<NavigationStore>();
-                services.AddSingleton<ContactServices>();
+                
             }).Build();
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             var navigationStore = app.Services.GetRequiredService<NavigationStore>();
-            var contactServices = app.Services.GetRequiredService<ContactServices>();
-            navigationStore.CurrentViewModel = new ContactsViewModel(navigationStore, contactServices);
+            ContactServices.ReadList();            
+            navigationStore.CurrentViewModel = new ContactsViewModel(navigationStore);
 
             app.Start();
 
             var MainWindow = app.Services.GetRequiredService<MainWindow>();
-            MainWindow.DataContext = new MainViewModel(navigationStore, contactServices);
+            MainWindow.DataContext = new MainViewModel(navigationStore);
             MainWindow.Show();
 
             base.OnStartup(e);

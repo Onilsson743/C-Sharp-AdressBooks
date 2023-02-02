@@ -10,12 +10,12 @@ namespace WPF_NavigationStore.MVVM.ViewModels
     public class EditContactViewModel : ObservableObject
     {
         private readonly NavigationStore _navigationStore;
-        private readonly ContactServices _contactServices;
 
-        public EditContactViewModel(NavigationStore navigationStore, ContactServices contactServices)
+
+        public EditContactViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
-            _contactServices = contactServices;
+
         }
     }
 }

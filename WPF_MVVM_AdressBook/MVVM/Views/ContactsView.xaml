@@ -42,7 +42,7 @@
 
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="right">
                                     <!--<Button x:Name="button_Edit" Click="button_Edit_Click" Content="Ändra"  Width="45" Height="35" Background="DarkSeaGreen">-->
-                                    <Button CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=TestCommand}" Content="Ändra" Margin="5 0 0 0" Width="45" Height="35" Background="DarkGreen" >
+                                    <Button CommandParameter="{Binding .}" Command="{}" Content="Ändra" Margin="5 0 0 0" Width="45" Height="35" Background="DarkGreen" >
                                         <Button.Resources>
                                             <Style TargetType="{x:Type Border}">
                                                 <Setter Property="CornerRadius" Value="5"/>

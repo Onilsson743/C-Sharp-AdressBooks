@@ -11,18 +11,19 @@ using WPF_NavigationStore.MVVM.Models;
 
 namespace WPF_NavigationStore.Services
 {
-    public class ContactServices
+    public static class ContactServices
     {
-        private string filePath = $@"{Directory.GetCurrentDirectory()}\adresslist.json";
-        public ObservableCollection<ContactModel> contacts = new ObservableCollection<ContactModel>();
+        private static string filePath = $@"{Directory.GetCurrentDirectory()}\adresslist.json";
+        public static ObservableCollection<ContactModel> contacts = new ObservableCollection<ContactModel>();
+        public static ObservableCollection<ContactModel> contact = new ObservableCollection<ContactModel>();
 
-        public void SaveListToJson(ObservableCollection<ContactModel> personList)
+        public static void SaveListToJson(ObservableCollection<ContactModel> personList)
         {
             using var sw = new StreamWriter(filePath);
             sw.Write(JsonConvert.SerializeObject(personList));
         }
 
-        public void ReadList()
+        public static void ReadList()
         {
             try
             {
@@ -38,24 +39,18 @@ namespace WPF_NavigationStore.Services
             catch { contacts = new ObservableCollection<ContactModel>(); }
         }
 
-        public void Add(ContactModel content)
-        {
-            if (content.FirstName != null!)
-            {
-                MessageBox.Show(content.DisplayAll, "Test");
-            }
-            
-            //contacts.Add(content);      
-            //SaveListToJson(contacts);
-
+        public static void Add(ContactModel content)
+        {            
+            contacts.Add(content);      
+            SaveListToJson(contacts);
         }
-        public void Remove(ContactModel content)
+        public static void Remove(ContactModel content)
         {
             contacts.Remove(content);
             SaveListToJson(contacts);
         }
 
-        public ObservableCollection<ContactModel> GetList()
+        public static ObservableCollection<ContactModel> GetList()
         {
             return contacts;
         }

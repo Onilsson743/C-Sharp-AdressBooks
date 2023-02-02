@@ -14,20 +14,18 @@ namespace WPF_NavigationStore.MVVM.ViewModels
     public class MainViewModel : ObservableObject
     {
         private readonly NavigationStore _navigationStore;
-        private readonly ContactServices _contactServices;
-        
+ 
 
         public ICommand GoToContactsViewCommand { get; }
         public ICommand GoToAddContactViewCommand { get; }
 
-        public MainViewModel(NavigationStore navigationStore, ContactServices contactServices)
+        public MainViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
-            _contactServices = contactServices;
-            _contactServices.ReadList();
+            
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-            GoToContactsViewCommand = new NavigateCommand<ContactsViewModel>(navigationStore, () => new ContactsViewModel(_navigationStore, _contactServices));
-            GoToAddContactViewCommand = new NavigateCommand<AddContactViewModel>(navigationStore, () => new AddContactViewModel(_navigationStore, _contactServices));
+            GoToContactsViewCommand = new NavigateCommand<ContactsViewModel>(navigationStore, () => new ContactsViewModel(_navigationStore));
+            GoToAddContactViewCommand = new NavigateCommand<AddContactViewModel>(navigationStore, () => new AddContactViewModel(_navigationStore));
             
         }
 
