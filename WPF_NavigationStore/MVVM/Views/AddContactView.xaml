@@ -36,7 +36,7 @@
             <!-- Form to add a new contact -->
             <StackPanel>
                 <TextBlock Text="Förnamn" Margin="0 0 30 0"/>
-                <TextBox Text="{Binding FirstName}" Padding="3" Margin="0 0 10 10" />
+                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Padding="3" Margin="0 0 10 10" />
 
                 <TextBlock Text="Efternamn" />
                 <TextBox Text="{Binding LastName}" Padding="3" Margin="0 0 10 10" />

@@ -19,18 +19,31 @@ namespace WPF_NavigationStore.MVVM.ViewModels
 
 
         private string firstName;
-        public string FirstName { get; set; } = "test";
+
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
+            set
+            {
+                this.firstName = value;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
 
 
-   
 
-     
-        
 
-        
-       
+
+
+
+
+
         public ObservableCollection<ContactModel> ContactList { get; }
         public ICommand CancelCommand { get; }
         public ICommand AddCommand { get; }
@@ -50,6 +63,7 @@ namespace WPF_NavigationStore.MVVM.ViewModels
 
         private ICommand AddContact()
         {
+            FirstName = firstName;
             _contactServices.Add(new ContactModel
             {
                 FirstName = FirstName,
