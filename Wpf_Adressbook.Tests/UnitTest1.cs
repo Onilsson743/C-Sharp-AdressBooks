@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
-using WPF_NavigationStore.MVVM.Models;
-using WPF_NavigationStore.MVVM.ViewModels;
-using WPF_NavigationStore.Services;
+using WPF_AdressBook.MVVM.Models;
+using WPF_AdressBook.MVVM.ViewModels;
+using WPF_AdressBook.Services;
 
 namespace Wpf_Adressbook.Tests
 {
@@ -21,7 +21,6 @@ namespace Wpf_Adressbook.Tests
         {
             //Arrange
             ContactServices.contacts = new ObservableCollection<ContactModel>();
-            ContactServices.Add(contact);
             ContactServices.Add(contact);
 
 

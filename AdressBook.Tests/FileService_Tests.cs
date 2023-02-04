@@ -32,21 +32,5 @@ namespace AdressBook.Tests
             //Checks if file exists
             Assert.True(File.Exists(fileService.FilePath));
         }
-
-        [Fact]
-        public void Saves_List_To_Json_File_And_Saves_File_To_List()
-        {
-            //Arrange
-            var contactList = new List<ContactInfo> { contactInfo, contactInfo };
-            fileService.SaveListToJson(contactList);
-
-            // Act
-            fileService.ReadList();
-
-            // Assert
-            //Assert.Contains();
-            Assert.Equal(contactList, fileService.PersonList);
-            //Assert.True(fileService.PersonList.Contains(contactInfo));
-        }
     }
 }

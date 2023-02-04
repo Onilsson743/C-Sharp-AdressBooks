@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WPF_NavigationStore\WPF_NavigationStore.csproj" />
+    <ProjectReference Include="..\WPF_AdressBook\WPF_AdressBook.csproj" />
   </ItemGroup>
 
 </Project>

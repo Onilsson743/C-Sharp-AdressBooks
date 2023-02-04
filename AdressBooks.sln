@@ -5,15 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_AdressBook", "00_ConsoleApp\ConsoleApp_AdressBook.csproj", "{001758B1-5569-4730-9A2B-09B89FDD7E49}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_AdressBook", "02_WPF\WPF_AdressBook.csproj", "{75B21EE1-6183-4834-8E97-5E6ABD973FF3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdressBook.Tests", "AdressBook.Tests\AdressBook.Tests.csproj", "{5C35D81F-28F4-4A96-833B-8C6E72E551F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_MVVM_AdressBook", "WPF_MVVM_AdressBook\WPF_MVVM_AdressBook.csproj", "{91EFEBD4-70E6-4CA0-8A01-96F07632584C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf_Adressbook.Tests", "Wpf_Adressbook.Tests\Wpf_Adressbook.Tests.csproj", "{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_NavigationStore", "WPF_NavigationStore\WPF_NavigationStore.csproj", "{1310A4C6-B01F-4280-8A8B-3907B266A5E9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_Adressbook.Tests", "Wpf_Adressbook.Tests\Wpf_Adressbook.Tests.csproj", "{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_AdressBook", "WPF_AdressBook\WPF_AdressBook.csproj", "{BAAB740E-6D72-4624-AA20-E1C3C3BEBEA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,26 +21,18 @@ Global
 		{001758B1-5569-4730-9A2B-09B89FDD7E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{001758B1-5569-4730-9A2B-09B89FDD7E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{001758B1-5569-4730-9A2B-09B89FDD7E49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75B21EE1-6183-4834-8E97-5E6ABD973FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75B21EE1-6183-4834-8E97-5E6ABD973FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75B21EE1-6183-4834-8E97-5E6ABD973FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75B21EE1-6183-4834-8E97-5E6ABD973FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C35D81F-28F4-4A96-833B-8C6E72E551F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C35D81F-28F4-4A96-833B-8C6E72E551F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C35D81F-28F4-4A96-833B-8C6E72E551F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C35D81F-28F4-4A96-833B-8C6E72E551F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91EFEBD4-70E6-4CA0-8A01-96F07632584C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91EFEBD4-70E6-4CA0-8A01-96F07632584C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91EFEBD4-70E6-4CA0-8A01-96F07632584C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91EFEBD4-70E6-4CA0-8A01-96F07632584C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAB740E-6D72-4624-AA20-E1C3C3BEBEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAB740E-6D72-4624-AA20-E1C3C3BEBEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAB740E-6D72-4624-AA20-E1C3C3BEBEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAB740E-6D72-4624-AA20-E1C3C3BEBEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
