@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_NavigationStore.MVVM.Models;
+using WPF_NavigationStore.MVVM.ViewModels;
 using WPF_NavigationStore.Services;
 
 namespace WPF_NavigationStore.MVVM.Views
@@ -30,7 +31,10 @@ namespace WPF_NavigationStore.MVVM.Views
 
         private void button_Edit_Click(object sender, RoutedEventArgs e)
         {
+            var button = (Button)sender;
+            var contact = (ContactModel)button.DataContext;
 
+            ContactServices.editContact = contact;
         }
         private void button_Remove_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +46,7 @@ namespace WPF_NavigationStore.MVVM.Views
             if (MessageBoxResult.Yes == result)
             {
                 ContactServices.Remove(contact);
-                MessageBox.Show("Contact removed!");
+                MessageBox.Show("Kontakted Raderad!");
             }
 
         }

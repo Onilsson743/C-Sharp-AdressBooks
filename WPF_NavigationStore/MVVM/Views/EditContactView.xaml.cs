@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_NavigationStore.MVVM.Models;
+using WPF_NavigationStore.Services;
 
 namespace WPF_NavigationStore.MVVM.Views
 {
@@ -23,6 +25,19 @@ namespace WPF_NavigationStore.MVVM.Views
         public EditContactView()
         {
             InitializeComponent();
+        }
+        
+
+        private void button_Update_Contact_Click(object sender, RoutedEventArgs e)
+        {
+            ContactServices.Update(new ContactModel
+            {
+                FirstName = tb_FirstName.Text,
+                LastName = tb_LastName.Text,
+                Email = tb_Email.Text,
+                PhoneNumber = tb_PhoneNumber.Text,
+                Address = tb_Address.Text,
+            });
         }
     }
 }

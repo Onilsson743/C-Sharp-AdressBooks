@@ -15,7 +15,7 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="18" Text="{Binding Title}"/>
+        <TextBlock Grid.Row="0" FontSize="18" Text="Alla kontakter"/>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -32,6 +32,7 @@
                       SelectionMode="Single" 
                       SelectedItem="{Binding name}"
                       HorizontalContentAlignment="Stretch"
+                      x:Name="Contacts_ListView"
                       >
                 <ListView.ItemTemplate >
                     <DataTemplate DataType="{x:Type models:ContactModel}">
@@ -47,10 +48,10 @@
                                     <TextBlock Text="{Binding Email}" Padding="5 0 0 5" />
                                 </StackPanel>
 
-
-
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="right">
-                                    <Button x:Name="button_Show" Click="button_Edit_Click"  Width="45" Height="35" Background="DarkSeaGreen">
+                                    <!--<Button x:Name="button_Show" Click="button_Edit_Click" Content="Ändra" Width="45" Height="35" Background="DarkSeaGreen">-->
+                                    <Button x:Name="button_Show" Click="button_Edit_Click" Command="{Binding ElementName=Contacts_ListView, Path=DataContext.GoToEditCommand}" Content="Ändra" Width="45" Height="35" Background="DarkSeaGreen">
+                                    <!--<Button x:Name="button_Show" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}},Path=DataContext.NavigateToAccountsCommand}" Content="Ändra" Width="45" Height="35" Background="DarkSeaGreen">-->
                                         <Button.Resources>
                                             <Style TargetType="{x:Type Border}">
                                                 <Setter Property="CornerRadius" Value="5"/>
@@ -73,11 +74,9 @@
 
             <!--Displays all info of selected contact-->
             <ListView Foreground="White" 
-                        
                       Grid.Column="1" 
                       Background="Transparent" 
-                      ItemsSource="{Binding contact}" 
-                      >
+                      ItemsSource="{Binding contact}">
                 <ListView.ItemTemplate >
                     <DataTemplate DataType="{x:Type models:ContactModel}">
                         <TextBlock Text="{Binding DisplayAll}" Padding="5 5 0 0" FontSize="18" FontWeight="Medium"/>                           

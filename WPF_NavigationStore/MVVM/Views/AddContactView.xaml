@@ -23,7 +23,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
         </Grid>
-        <TextBlock Grid.Row="0" FontSize="18" Text="{Binding Title}"/>
+        <TextBlock Grid.Row="0" FontSize="20" Text="Lägg till ny kontakt"/>
 
         <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
