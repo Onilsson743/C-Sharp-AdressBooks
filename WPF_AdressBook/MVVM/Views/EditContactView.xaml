@@ -12,7 +12,7 @@
     <Grid>
         <TextBlock Text="{Binding title}" FontSize="20" Margin="20 0 0 0" />
 
-        <!-- Form to add a new contact -->
+        <!-- Form to edit contact -->
         <StackPanel Margin="20 50 20 0">
             <TextBlock Text="Förnamn" Margin="0 0 30 0"/>
             <TextBox Name="tb_FirstName" Text="{Binding firstName}" Padding="3" Margin="0 0 10 10" />
