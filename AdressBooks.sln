@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_AdressBook", "02_WPF\WP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdressBook.Tests", "AdressBook.Tests\AdressBook.Tests.csproj", "{5C35D81F-28F4-4A96-833B-8C6E72E551F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MVVM_AdressBook", "WPF_MVVM_AdressBook\WPF_MVVM_AdressBook.csproj", "{91EFEBD4-70E6-4CA0-8A01-96F07632584C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_MVVM_AdressBook", "WPF_MVVM_AdressBook\WPF_MVVM_AdressBook.csproj", "{91EFEBD4-70E6-4CA0-8A01-96F07632584C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_NavigationStore", "WPF_NavigationStore\WPF_NavigationStore.csproj", "{1310A4C6-B01F-4280-8A8B-3907B266A5E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_NavigationStore", "WPF_NavigationStore\WPF_NavigationStore.csproj", "{1310A4C6-B01F-4280-8A8B-3907B266A5E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_Adressbook.Tests", "Wpf_Adressbook.Tests\Wpf_Adressbook.Tests.csproj", "{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1310A4C6-B01F-4280-8A8B-3907B266A5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217B2C0B-1ADD-4075-AE5C-E16ABE758C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

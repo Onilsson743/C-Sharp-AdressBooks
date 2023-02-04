@@ -36,7 +36,7 @@ namespace AdressBook.Tests
         [Fact]
         public void Saves_List_To_Json_File_And_Saves_File_To_List()
         {
-            //Arrenge
+            //Arrange
             var contactList = new List<ContactInfo> { contactInfo, contactInfo };
             fileService.SaveListToJson(contactList);
 
